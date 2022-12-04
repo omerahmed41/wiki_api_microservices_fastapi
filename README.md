@@ -59,10 +59,11 @@ input that your API gets.
 
 We used  swager open-API to auto document your APIs
 
-![Screen Shot 2022-07-04 at 2 21 23 PM](https://user-images.githubusercontent.com/15717941/177135399-ed503896-38f8-4fe0-a41f-1a769fe2d85f.png)
+<img width="1440" alt="Screenshot 2022-12-04 at 2 03 50 PM" src="https://user-images.githubusercontent.com/15717941/205492101-c37f158c-77fe-44c9-ae9c-60c7301b867a.png">
+<img width="1440" alt="Screenshot 2022-12-04 at 2 05 32 PM" src="https://user-images.githubusercontent.com/15717941/205492163-5086e24b-21ff-4d89-b571-e9c3aca44033.png">
 
-![Screen Shot 2022-07-04 at 2 21 55 PM](https://user-images.githubusercontent.com/15717941/177135458-10933058-acf7-4b25-85cc-8171654363a9.png)
-
+* I added suggestions option when title not on wikimedia english
+<img width="1440" alt="Screenshot 2022-12-04 at 2 07 25 PM" src="https://user-images.githubusercontent.com/15717941/205492252-67d4c324-6462-4b71-bce1-fc2f27a89ff0.png">
 
 ## Design Patterns:
 * Pub-Sub: I used bub-sub model along with events streaming broker rabbitmq.
