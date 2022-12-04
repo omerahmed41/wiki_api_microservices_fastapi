@@ -16,6 +16,6 @@ def parser(content: str = ""):
     result = json.loads(content)
     page = result['query']['pages'][0]
     if "revisions" not in page:
-        raise DomainException("String parser exception", 502, "missing info")
+        raise DomainException("String parser exception", 502, "we can't find the information on Wikimedia English")
     content = page['revisions'][0]['content']
     return find_between(content, "Short description|", "}}")
