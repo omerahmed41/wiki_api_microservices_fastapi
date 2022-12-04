@@ -1,8 +1,6 @@
 from fastapi.responses import JSONResponse
 
-
-from app.autocomplet_service import add_new_suggestions
-from app.autocomplet_service import get_suggestions
+from domain.autocomplet_service import add_new_suggestions, get_suggestions
 from infrastructure.setting import my_fastapi_app
 
 from domain.info_service import get_short_description

@@ -37,7 +37,17 @@ services:
     networks:
       - wiki_network
 
-
+#  service-registry:
+#    container_name:  service-registry
+#    build:
+#        context: ./service_registry
+#        args:
+#          JDK_VERSION: 17
+#        dockerfile: Dockerfile
+#    ports:
+#      - 8761:8761
+#    networks:
+#      - wiki_network
 networks:
   wiki_network:
     name: wiki_network

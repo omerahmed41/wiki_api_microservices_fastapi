@@ -1,8 +1,9 @@
-from app.httpHelper import get_value_with_http
+from domain.Exception import DomainException
+from domain.httpHelper import get_value_with_http
 
 from infrastructure.redis import redis_client
 
-from app.autocomplet_service import add_new_suggestions, get_suggestions
+from domain.autocomplet_service import add_new_suggestions, get_suggestions
 
 
 async def get_short_description(title: str = ''):
@@ -14,6 +15,6 @@ async def get_short_description(title: str = ''):
         redis_client.set(title, short_description)
         add_new_suggestions(title)
         return short_description
-    except Exception as e:
+    except DomainException as e:
         suggestions = get_suggestions(title)
-        return e.__str__() + f"can't find data for {title} try search for: {suggestions}"
+        return f"can't find data for {title} try search for: {suggestions}, more details {e.detail}"

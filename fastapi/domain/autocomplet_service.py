@@ -17,16 +17,16 @@ def get_suggestions(prefix):
     if not start:
         return []
     while (len(results) != count):
-         range = redis_client.zrange('compl', start, start + rangelen - 1)
-         start += rangelen
-         if not range or len(range) == 0:
-             break
-         for entry in range:
-             entry=entry.decode('utf-8')
-             minlen = min(len(entry),len(prefix))
-             if entry[0:minlen] != prefix[0:minlen]:
+        range = redis_client.zrange('compl', start, start + rangelen - 1)
+        start += rangelen
+        if not range or len(range) == 0:
+            break
+        for entry in range:
+            entry = entry.decode('utf-8')
+            minlen = min(len(entry), len(prefix))
+            if entry[0:minlen] != prefix[0:minlen]:
                 count = len(results)
                 break
-             if entry[-1] == "*" and len(results) != count:
+            if entry[-1] == "*" and len(results) != count:
                 results.append(entry[0:-1])
     return results
