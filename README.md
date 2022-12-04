@@ -78,9 +78,14 @@ We used  swager open-API to auto document your APIs
 #### I commented the part of pushing the images to DockerHub then uploading it to the cloud but, you can easily uncomment that to make it work.
 <img width="1440" alt="Screen Shot 2022-08-21 at 6 37 42 PM" src="https://user-images.githubusercontent.com/15717941/185796382-343c44bb-7bbe-4ecc-9b89-49e727d37305.png">
 
+## Scale
+- I've used REDIS to store the results locally for 1h or 1 day, to not hit the wiki-api every time, and we can make all top hits search titles available on REDIS.
+- To scale we can use kubernetes to allow for horizontal scaling and create many replica for both the main service and redis per region.
+
 ## Todo:
 #### the goal was to build the skeleton and base Architecture of the system, but these are Things need to be done when have more time: 
-* Review and add more unit, integrations, contracts and acceptance tests.
+* add more unit, integrations, contracts and acceptance tests, add --cov check to be min %90 in the CI/CD.
+* use pylint and mypy on the CI/CD.
 * Build Frontend with React.js.
 * Add more App Validations.
 * Focus more on documentation.
