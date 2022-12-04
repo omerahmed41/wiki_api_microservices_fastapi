@@ -1,0 +1,43 @@
+version: "3.9"
+   
+services:
+#  db:
+#    image: postgres
+#    volumes:
+#      - ./data/db:/var/lib/postgresql/data
+#    networks:
+#      - wiki_network
+#    environment:
+#      - POSTGRES_DB=postgres
+#      - POSTGRES_USER=postgres
+#      - POSTGRES_PASSWORD=postgres
+
+  fastapi:
+    build: ./fastapi
+    volumes:
+      - ./fastapi:/fastapi
+    ports:
+      - "80:80"
+    restart: always
+    networks:
+        - wiki_network
+
+
+
+  redis:
+    image: redis:6-alpine
+    networks:
+      - wiki_network
+
+
+  nginx:
+    build: ./web
+    ports:
+      - 81:81
+    networks:
+      - wiki_network
+
+
+networks:
+  wiki_network:
+    name: wiki_network
