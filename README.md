@@ -49,9 +49,12 @@ input that your API gets.
 <img width="1435" alt="Screen Shot 2022-08-22 at 2 02 48 AM" src="https://user-images.githubusercontent.com/15717941/185812782-7510305c-25b0-4ffe-b895-d34f88f0c4c8.png">
 
 
-  
+##  Domain driven design with services Layer architecture
+#### I followed Domain driven design with services Layer architecture to make it easy to understand the code
+<img width="1440" alt="Screenshot 2022-12-04 at 2 10 34 PM" src="https://user-images.githubusercontent.com/15717941/205492500-35dfc962-7fd0-4874-a790-4c5409ef7733.png">
+
 ## Docs:
-#### I used OpenAPI with swagger for API docs, also  followed Domain driven design with services Layer architecture to make it easy to understand the code
+#### I used OpenAPI with swagger for API docs, 
 #### Lastly the Naming of Classes, methods and objects is meaningful.
 
 ### to test the APIs see: 
