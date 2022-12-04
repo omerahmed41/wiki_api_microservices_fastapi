@@ -1,7 +1,20 @@
-# microservice-django
-A microservice blueprint built with python Django
+# wiki-api fastapi
+##### An API to produce a google-like short description of a person. Example: When you google “yoshua bengio”, you get “Canadian computer scientist” on the right information box as here. Your API will return “Canadian computer scientist” for input “Yoshua bengio”.
+## Instructions:
+* ### Data source
+* - Your source is the English wikipedia page content of the person being asked. For this, you will use the
+mediawiki API.
+Example : Try the following query for Yoshua Bengio.
+https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=Yoshua_Bengio&rvlimit=1&formatver
+sion=2&format=json&rvprop=content
+You will get a json output which is copied here. You will notice {{Short description|Canadian computer
+scientist}} in the content value. 
+* - You can use this query as a template and replace titles with the appropriate
+input that your API gets.
+* #### You will have 48 hours to submit the assignment.
 
-Each service have their separate database completely decoupled. Nginx sits in front of each of the services to abstract all the microservices API endpoints into single one.
+
+
 #### For first build:
 * make setup
 #### To run:
@@ -11,28 +24,20 @@ Each service have their separate database completely decoupled. Nginx sits in fr
 
 
 ## Technology Stack & Features:
-* Django fresh build
-* RestFramework
+* Fastapi with python 3.9
 * open API and swagger.
 * docker with Docker compose.
 * makefile.
-* Django signals.
 * Logs.
 * REDIS
-* Celery
-* Schedule Tasks (Django Q) 
 * Custom exception handler
-* message broker - rabbitmq.
 * CI/CD Pipeline.
 * kubernetes.
 * Nginx API-gateway.
 * Service registry(Eureka Spring Cloud).
-* todo-list app
-* Notification Service
 * Design patterns (Pub-Sub, Command, Repository, Singleton).
 * layer architecture (DDD).
-* Frontend
-* auth service- keycloak (todo).
+
 
 # System Architecture:
 ![System Architecture](https://user-images.githubusercontent.com/15717941/185804170-07e3266b-a0c8-47b2-b0b7-c506731bb45d.jpg)
@@ -44,30 +49,19 @@ Each service have their separate database completely decoupled. Nginx sits in fr
 <img width="1435" alt="Screen Shot 2022-08-22 at 2 02 48 AM" src="https://user-images.githubusercontent.com/15717941/185812782-7510305c-25b0-4ffe-b895-d34f88f0c4c8.png">
 
 
-
-
-## RabbitMq Dashboard:
-* URL: http://localhost:15672
-* username: guest
-* password: guest
-<img width="1440" alt="rabbitmq" src="https://user-images.githubusercontent.com/15717941/183268850-8a03311f-9409-4f19-ba30-10be962da86d.png">
-
+  
 ## Docs:
 #### I used OpenAPI with swagger for API docs, also  followed Domain driven design with services Layer architecture to make it easy to understand the code
 #### Lastly the Naming of Classes, methods and objects is meaningful.
 
 ### to test the APIs see: 
-#### http://127.0.0.1:8000/redoc/
-#### http://127.0.0.1:8000/swagger/
+#### http://localhost/
 
 We used  swager open-API to auto document your APIs
 
 ![Screen Shot 2022-07-04 at 2 21 23 PM](https://user-images.githubusercontent.com/15717941/177135399-ed503896-38f8-4fe0-a41f-1a769fe2d85f.png)
 
 ![Screen Shot 2022-07-04 at 2 21 55 PM](https://user-images.githubusercontent.com/15717941/177135458-10933058-acf7-4b25-85cc-8171654363a9.png)
-
-## Communications: 
-#### For Async communications I used rabbitmq, and for sync I used normal http calls (later on grpc will be good use).
 
 
 ## Design Patterns:
@@ -86,9 +80,6 @@ We used  swager open-API to auto document your APIs
 * Build Frontend with React.js.
 * Add more App Validations.
 * Focus more on documentation.
-* Auth Service with Keycloak.
-* REDIS.
-* GRPC (support HTTP2/Websocket).
 
-* Note make sure you have Docker installed and give it enough memory from the setting, because we have 6 services running with 4 DBs.
-<img width="1440" alt="Screen Shot 2022-08-07 at 3 53 13 PM" src="https://user-images.githubusercontent.com/15717941/183289201-10746be4-af21-4c2e-8242-bf1921c6faef.png">
+
+* Note make sure you have Docker installed and give it enough memory from the setting
