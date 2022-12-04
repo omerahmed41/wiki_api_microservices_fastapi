@@ -12,10 +12,10 @@ services:
 #      - POSTGRES_USER=postgres
 #      - POSTGRES_PASSWORD=postgres
 
-  fastapi:
-    build: ./fastapi
+  wiki_client:
+    build: ./wiki_client
     volumes:
-      - ./fastapi:/fastapi
+      - ./wiki_client:/wiki_client
     ports:
       - "80:80"
     restart: always

@@ -1,4 +1,4 @@
-cd docker-fastapi-projects-nginx
+cd project-dir
 
 docker build . -t nginx
 

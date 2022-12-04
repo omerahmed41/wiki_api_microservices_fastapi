@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: fastapi-app
+  name: wiki_client-app
   labels:
-    app: fastapi
+    app: wiki_client
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: fastapi
+      app: wiki_client
   template:
     metadata:
       labels:
-        app: fastapi
+        app: wiki_client
     spec:
       containers:
         - image: postgres:alpine3.16
-          name: fastapi
+          name: wiki_client
           ports:
             - containerPort: 8000
               name: gunicorn
