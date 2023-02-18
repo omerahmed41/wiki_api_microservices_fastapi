@@ -43,7 +43,7 @@ input that your API gets.
 ![System Architecture](https://user-images.githubusercontent.com/15717941/185804170-07e3266b-a0c8-47b2-b0b7-c506731bb45d.jpg)
 
 
-## Eureka Service:
+## Eureka Service (disabled now ot make app simple):
 #### to see all Instances currently registered with Eureka
 * URL: http://localhost:8761
 <img width="1435" alt="Screen Shot 2022-08-22 at 2 02 48 AM" src="https://user-images.githubusercontent.com/15717941/185812782-7510305c-25b0-4ffe-b895-d34f88f0c4c8.png">
@@ -71,7 +71,7 @@ We used  swager open-API to auto document your APIs
 ## Design Patterns:
 * Pub-Sub: I used bub-sub model along with events streaming broker rabbitmq.
 * Repository: Used repository pattern to decouple Domain layer from DB layer, for example we can mock the repository and use DB memory.
-* Singleton: Singleton pattern is used by  django for DBConnections.
+* Singleton: Singleton pattern is used for REDIS Connections.
 
 ## CI/CD:
 #### Two steps: Build with tests, then Deploy.
